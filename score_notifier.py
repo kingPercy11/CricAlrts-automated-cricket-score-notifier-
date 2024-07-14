@@ -3,6 +3,7 @@ import requests
 from bs4 import BeautifulSoup
 
 # Telegram bot token and chat ID
+#can be made using botfather in telegram
 bot_token = '7017780310:AAHCASlt92bKMysJGGfozvybskT6mGX_jYU'
 chat_id = '7195313832'
 
@@ -17,6 +18,7 @@ def send_telegram_message(message):
     if response.status_code != 200:
         print("Failed to send message:", response.text)
 
+#notification
 def run(score):
     if score[0] == '6':
         return ("A six has been hit!\n" )
@@ -27,6 +29,9 @@ def run(score):
     else:
         print("Score updated\n")
 
+#score parser
+#can be changed
+#option menu system
 url = "https://www.espncricinfo.com/series/lanka-premier-league-2024-1421415/kandy-falcons-vs-dambulla-sixers-1st-match-1428459/live-cricket-score"
 response = requests.get(url)
 if response.status_code == 200:
